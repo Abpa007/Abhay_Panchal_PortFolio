@@ -96,7 +96,7 @@ export default function Hero() {
               <a href="https://github.com/Abpa007" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300" aria-label="GitHub">
                 <Code size={20} />
               </a>
-              <a href="https://linkedin.com/in/abhay-panchal" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/abhay-panchal-3b853b376" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300" aria-label="LinkedIn">
                 <Link size={20} />
               </a>
               <a href="mailto:abhayp21@gmail.com" className="text-muted-foreground hover:text-primary transition-colors duration-300" aria-label="Email">

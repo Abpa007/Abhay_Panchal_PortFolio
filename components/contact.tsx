@@ -115,7 +115,7 @@ export default function Contact() {
                   <Code size={24} />
                 </a>
                 <a
-                  href="https://linkedin.com/in/abhay-panchal"
+                  href="https://www.linkedin.com/in/abhay-panchal-3b853b376"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-4 bg-card border border-border rounded-lg text-foreground hover:text-primary hover:border-primary transition-all duration-300 hover:scale-110"
