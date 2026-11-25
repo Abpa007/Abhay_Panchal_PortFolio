@@ -191,7 +191,7 @@ function Hero() {
         </div>
       </div>
       <div className="hero-side">
-        <div className="portrait-frame" style={{ position: 'absolute', inset: '5% 8%', overflow: 'hidden', padding: 8, border: '1px solid rgb(197 239 128 / 48%)', background: 'linear-gradient(145deg, rgb(197 239 128 / 13%), rgb(242 240 232 / 5%))', boxShadow: '0 24px 80px rgb(0 0 0 / 28%), 0 0 70px rgb(197 239 128 / 8%)' }}>
+        <div className="portrait-frame" style={{ position: 'absolute', inset: '5% 8%', overflow: 'hidden', padding: 8, border: '1px solid rgb(219 190 142 / 55%)', background: 'linear-gradient(145deg, rgb(219 190 142 / 19%), rgb(242 240 232 / 4%))', boxShadow: '0 24px 80px rgb(0 0 0 / 38%), 0 0 70px rgb(219 190 142 / 8%)' }}>
           <Image
             className="portrait-image"
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_z6ks28z6ks28z6ks-PIvAjCTUaSpYmVA0PRS98fhq5WH1fc.png"
