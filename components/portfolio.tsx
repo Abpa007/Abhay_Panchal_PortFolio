@@ -138,13 +138,6 @@ const projects: Project[] = [
 
 const filters = ['All projects', 'AI & Data', 'Full-stack', 'Analytics'] as const
 
-const skillGroups = [
-  { title: 'Languages', items: ['Python', 'JavaScript', 'SQL', 'C', 'C++'] },
-  { title: 'Frameworks', items: ['React', 'Next.js', 'Node.js', 'Express', 'FastAPI', 'Django', 'Flask'] },
-  { title: 'Data & AI', items: ['Pandas', 'NumPy', 'Scikit-learn', 'PyTorch', 'TensorFlow', 'XGBoost', 'RAG', 'NLP', 'GNN'] },
-  { title: 'Tools & platforms', items: ['MongoDB', 'PostgreSQL', 'MySQL', 'Neo4j', 'Power BI', 'Streamlit', 'Docker', 'Git', 'Jira'] },
-]
-
 const experience = [
   {
     role: 'MERN Stack Developer Intern',
@@ -172,7 +165,7 @@ function SectionLabel({ children, number }: { children: React.ReactNode; number:
 
 function Navigation() {
   const [open, setOpen] = useState(false)
-  const items = [['Work', '#work'], ['Experience', '#experience'], ['About', '#about'], ['Contact', '#contact']]
+  const items = [['Work', '#work'], ['Experience', '#experience'], ['About', '#about'], ['Roles & Skills', '/roles-and-skills'], ['Contact', '#contact']]
   return (
     <header className="site-header">
       <a className="wordmark" href="#top" aria-label="Abhay Panchal, home"><span className="wordmark-mark">AP</span><span>abhay<span className="wordmark-dot">.</span></span></a>
@@ -190,10 +183,10 @@ function Hero() {
     <section id="top" className="hero-section">
       <div className="hero-grid-lines" aria-hidden="true" />
       <div className="hero-copy">
-        <p className="eyebrow"><span className="status-dot" /> OPEN TO SOFTWARE &amp; DATA ROLES <span className="eyebrow-location"><MapPin aria-hidden="true" /> INDORE, INDIA</span></p>
+        <p className="eyebrow"><span className="status-dot" /> OPEN TO DEVELOPER ROLES <span className="eyebrow-location"><MapPin aria-hidden="true" /> INDORE, INDIA</span></p>
         <h1>I build useful<br /><span>software.</span></h1>
         <div className="hero-bottom">
-          <p className="hero-intro">I&apos;m Abhay, and I&apos;m open to frontend, backend, and MERN development roles, along with opportunities in data analytics, data science, and AI/ML. My toolkit includes React, Next.js, Node.js, Express, MongoDB, SQL, and Python, with a growing foundation in machine learning.</p>
+          <p className="hero-intro">I&apos;m Abhay. I build web apps, work with data, and enjoy turning a messy problem into something people can actually use.</p>
           <a className="circle-link" href="#work" aria-label="Explore selected projects"><ArrowDown aria-hidden="true" /></a>
         </div>
       </div>
@@ -243,7 +236,7 @@ function ExperienceSection() {
 }
 
 function AboutSection() {
-  return <section id="about" className="about-section section-wrap"><SectionLabel number="03">ABOUT ME</SectionLabel><div className="about-layout"><div className="about-statement"><p className="eyebrow dark-eyebrow">DEVELOPER · DATA · INDORE</p><h2>I like figuring<br />things <span>out.</span></h2><p className="about-copy">I enjoy working across the backend, the interface, and the data behind a product. Lately, I&apos;ve been spending more time on analytics and applied AI.</p><a className="inline-link" href="https://github.com/Abpa007" target="_blank" rel="noreferrer">More on GitHub <ArrowUpRight aria-hidden="true" /></a></div><div className="about-details"><div className="education-card"><div className="about-card-label"><BriefcaseBusiness aria-hidden="true" /> EDUCATION <span>2021 — 2026</span></div><h3>Integrated Master of Computer Applications</h3><p>IPS Academy, Indore</p><p className="education-score">CGPA <strong>7.74</strong></p></div><div className="skills-card"><div className="about-card-label"><Code2 aria-hidden="true" /> TOOLKIT <span>FOUR DISCIPLINES</span></div><div className="skill-groups">{skillGroups.map((group) => <div className="skill-group" key={group.title}><h3>{group.title}</h3><p>{group.items.join(' · ')}</p></div>)}</div></div><div className="certification-card"><div className="about-card-label"><Sparkles aria-hidden="true" /> CERTIFICATIONS</div><ul><li>Job Ready Data Science, ML & AI <span>CodeWithHarry</span></li><li>Full Stack MERN Development <span>Vivek IT Solution</span></li><li>C/C++ with Object-Oriented Programming <span>Universal Informatics</span></li></ul></div></div></div></section>
+  return <section id="about" className="about-section section-wrap"><SectionLabel number="03">ABOUT ME</SectionLabel><div className="about-layout"><div className="about-statement"><p className="eyebrow dark-eyebrow">DEVELOPER · DATA · INDORE</p><h2>I like figuring<br />things <span>out.</span></h2><p className="about-copy">I enjoy working across the backend, the interface, and the data behind a product. Lately, I&apos;ve been spending more time on analytics and applied AI.</p><a className="inline-link" href="https://github.com/Abpa007" target="_blank" rel="noreferrer">More on GitHub <ArrowUpRight aria-hidden="true" /></a></div><div className="about-details"><div className="education-card"><div className="about-card-label"><BriefcaseBusiness aria-hidden="true" /> EDUCATION <span>2021 — 2026</span></div><h3>Integrated Master of Computer Applications</h3><p>IPS Academy, Indore</p><p className="education-score">CGPA <strong>7.74</strong></p></div><div className="certification-card"><div className="about-card-label"><Sparkles aria-hidden="true" /> CERTIFICATIONS</div><ul><li>Job Ready Data Science, ML & AI <span>CodeWithHarry</span></li><li>Full Stack MERN Development <span>Vivek IT Solution</span></li><li>C/C++ with Object-Oriented Programming <span>Universal Informatics</span></li></ul></div></div></div></section>
 }
 
 function ContactSection() {
