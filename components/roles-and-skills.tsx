@@ -5,32 +5,63 @@ const roles = [
   {
     number: '01',
     title: 'Frontend Developer',
-    summary: 'Building clear, responsive interfaces and connecting them to real application data.',
-    skills: ['React', 'Next.js', 'JavaScript', 'HTML', 'CSS', 'Tailwind CSS'],
+    summary: 'Building responsive interfaces and connecting them to real application data.',
+    skills: ['React.js', 'Next.js', 'JavaScript', 'HTML', 'CSS', 'Tailwind CSS', 'Redux Toolkit', 'SSR', 'SSG'],
   },
   {
     number: '02',
     title: 'Backend Developer',
     summary: 'Creating APIs and server-side features, with experience in authentication and data handling.',
-    skills: ['Node.js', 'Express', 'FastAPI', 'Django', 'Flask', 'Python', 'REST APIs', 'Docker', 'Git', 'WebSockets'],
+    skills: ['Node.js', 'Express.js', 'FastAPI', 'Django', 'Flask', 'Python', 'RESTful APIs', 'JWT', 'OAuth', 'RBAC', 'Docker', 'WebSockets'],
   },
   {
     number: '03',
     title: 'MERN / Full-Stack Developer',
     summary: 'Working across the interface, API, and database to deliver complete web applications.',
-    skills: ['MongoDB', 'Express', 'React', 'Node.js', 'JavaScript', 'Redux', 'JWT', 'RBAC'],
+    skills: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'JavaScript', 'Redux Toolkit', 'MySQL', 'JWT', 'RBAC'],
   },
   {
     number: '04',
     title: 'Data Analyst',
     summary: 'Cleaning and exploring data, writing queries, and turning results into useful reports.',
-    skills: ['SQL', 'Python', 'Pandas', 'NumPy', 'PostgreSQL', 'MySQL', 'Power BI', 'Streamlit', 'Jira'],
+    skills: ['SQL', 'Python', 'Pandas', 'NumPy', 'PostgreSQL', 'MySQL', 'Power BI', 'Advanced Excel', 'Tableau', 'Looker Studio', 'Snowflake', 'DAX', 'Streamlit'],
   },
   {
     number: '05',
     title: 'Data Science / AI & ML',
     summary: 'Applying machine-learning techniques through projects in prediction, fraud detection, and retrieval.',
-    skills: ['Python', 'Pandas', 'NumPy', 'Scikit-learn', 'PyTorch', 'TensorFlow', 'XGBoost', 'NLP', 'RAG', 'GNN', 'Neo4j'],
+    skills: ['Python', 'Pandas', 'NumPy', 'Scikit-learn', 'PyTorch', 'TensorFlow', 'XGBoost', 'NLP', 'RAG', 'Vector embeddings', 'GNN', 'Neo4j'],
+  },
+]
+
+const skillGroups = [
+  {
+    title: 'Languages & fundamentals',
+    skills: ['Python', 'JavaScript', 'SQL', 'C', 'C++', 'Object-oriented programming', 'Data structures & algorithms', 'System design', 'Problem solving', 'Statistical analysis', 'UI logic building'],
+  },
+  {
+    title: 'Frontend & web',
+    skills: ['React.js', 'Next.js', 'Next.js App Router', 'React Server Components', 'HTML', 'CSS', 'Tailwind CSS', 'Redux', 'Redux Toolkit', 'Responsive design', 'REST API integration', 'Form validation', 'Server-side rendering (SSR)', 'Static site generation (SSG)'],
+  },
+  {
+    title: 'Backend & application security',
+    skills: ['Node.js', 'Express.js', 'Django', 'Flask', 'FastAPI', 'RESTful APIs', 'JWT authentication', 'OAuth', 'Role-based access control (RBAC)', 'Middleware architecture', 'WebSockets', 'bcrypt', 'Stripe', 'Razorpay', 'Cloudinary'],
+  },
+  {
+    title: 'Databases & data engineering',
+    skills: ['MongoDB', 'MySQL', 'PostgreSQL', 'Neo4j', 'Schema design', 'Star schema modeling', 'Database indexing', 'Query optimization', 'Aggregation pipelines', 'Transaction management', 'ETL pipelines', 'Data cleaning', 'Web scraping', 'SQLAlchemy'],
+  },
+  {
+    title: 'Data science & AI',
+    skills: ['Scikit-learn', 'Pandas', 'NumPy', 'PyTorch', 'TensorFlow', 'XGBoost', 'Machine learning', 'Predictive modeling', 'Feature engineering', 'Regression models', 'Neural networks', 'Graph neural networks (GNN)', 'GraphSAGE', 'NLP', 'Sentiment analysis', 'RAG pipelines', 'Vector embeddings', 'OpenAI Whisper'],
+  },
+  {
+    title: 'Analytics & reporting',
+    skills: ['Power BI', 'DAX', 'Advanced Excel', 'Tableau', 'Looker Studio', 'Snowflake', 'Streamlit', 'Data visualization', 'Exploratory data analysis (EDA)', 'Trend forecasting', 'A/B testing', 'KPI dashboards', 'CSV data processing'],
+  },
+  {
+    title: 'Tools, quality & delivery',
+    skills: ['Git', 'GitHub', 'Postman', 'VS Code', 'Jupyter Notebook', 'Jira', 'Docker', 'Vercel', 'Render', 'Netlify', 'Unit testing (PyTest)', 'Manual testing', 'Regression testing', 'API testing', 'Cross-browser compatibility', 'Debugging', 'Code reviews', 'CI/CD', 'Agile/Scrum', 'Figma handoff', 'Prompt engineering', 'Gemini API', 'GitHub Copilot', 'Cursor', 'AI-assisted development'],
   },
 ]
 
@@ -79,13 +110,31 @@ export default function RolesAndSkills() {
           ))}
         </section>
 
-        <p className="mt-5 text-xs leading-6 text-[#737d72]">
-          Additional languages from my toolkit: C and C++.
-        </p>
+        <section aria-labelledby="complete-skills-heading" className="mt-12 border-t border-[#d8dbd0] pt-8">
+          <p className="text-xs font-medium uppercase tracking-[0.16em] text-[#5c7047]">Resume-verified skill set</p>
+          <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <h2 id="complete-skills-heading" className="text-3xl font-semibold tracking-[-0.06em] sm:text-4xl">The full toolkit.</h2>
+            <p className="max-w-lg text-sm leading-6 text-[#626b62]">Skills consolidated from all 10 resume versions. Repeated entries are listed once; role cards above highlight relevant combinations.</p>
+          </div>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {skillGroups.map((group) => (
+              <article key={group.title} className="rounded-md border border-[#d8dbd0] bg-[#fbfaf5] p-4 sm:p-5">
+                <h3 className="text-sm font-semibold tracking-tight">{group.title}</h3>
+                <ul aria-label={group.title} className="mt-3 flex flex-wrap gap-2">
+                  {group.skills.map((skill) => (
+                    <li key={skill} className="rounded-sm bg-[#e8ebdf] px-2.5 py-1.5 text-xs font-medium text-[#3c4c35]">
+                      {skill}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </section>
 
         <div className="mt-8 flex flex-col gap-3 border-t border-[#d8dbd0] pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm leading-6 text-[#626b62]">Also open to related junior and entry-level opportunities where I can keep learning and contribute.</p>
-          <a className="inline-flex w-fit items-center gap-2 rounded-sm bg-[#1a241d] px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-[#304331]" href="mailto:abhaypanchal095@gmail.com">
+          <a className="roles-contact-link inline-flex w-fit items-center gap-2 rounded-sm bg-[#1a241d] px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-[#304331]" href="mailto:abhaypanchal095@gmail.com">
             Get in touch <ArrowUpRight aria-hidden="true" size={16} />
           </a>
         </div>
