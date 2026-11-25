@@ -32,58 +32,58 @@ const projects: Project[] = [
     number: '01',
     title: 'Omni-Sentinel',
     category: 'AI & Data',
-    description: 'An autonomous financial-forensics platform that traces suspicious activity through connected transaction networks.',
-    details: ['GraphSAGE models with PyTorch and Neo4j graph queries', 'FastAPI services with Dockerized microservices', 'Sub-5ms risk-scoring pipeline and multi-agent telemetry analysis'],
+    description: 'A fraud investigation tool that follows suspicious transactions across linked accounts.',
+    details: ['Trained GraphSAGE models with PyTorch and queried transaction links in Neo4j', 'Built the services with FastAPI and Docker', 'Added risk scores that run in under 5 ms and telemetry checks from multiple agents'],
     stack: ['Python', 'GraphSAGE', 'Neo4j', 'FastAPI', 'Docker'],
     link: 'https://github.com/Abpa007/Omni-Sentinel',
     linkLabel: 'Source code',
   },
   {
     number: '02',
-    title: 'Distributed Event Streaming Engine',
+    title: 'Event Streaming Engine',
     category: 'Full-stack',
-    description: 'A low-latency async pub/sub engine for persistent, isolated live data streams and operational visibility.',
-    details: ['FastAPI and asyncio-based event routing', 'Persistent WebSocket gateways with room partitioning', 'Streamlit console for gateway health, sockets, and audit metrics'],
+    description: 'A small event-streaming engine for sending updates between services in real time.',
+    details: ['Routed events with FastAPI and asyncio', 'Kept WebSocket connections open and separated streams into rooms', 'Built a Streamlit page to check gateway health, connections, and audit events'],
     stack: ['Python', 'FastAPI', 'asyncio', 'WebSockets', 'Streamlit'],
   },
   {
     number: '03',
-    title: 'GNN Fraud Ring Intelligence',
+    title: 'Fraud Ring Detection',
     category: 'AI & Data',
-    description: 'A multi-modal detection service designed to identify complex fraud rings from transaction behavior and graph signals.',
-    details: ['Graph embeddings paired with vector-similarity search', 'FastAPI scoring endpoint at /predict/fraud', 'Streamlit intelligence hub for profiles, velocity, and risk signals'],
+    description: 'A fraud-detection project that looks for suspicious groups of accounts in transaction data.',
+    details: ['Compared graph embeddings with vector similarity search', 'Exposed fraud scores through a FastAPI /predict/fraud endpoint', 'Used Streamlit to review account profiles, activity, and risk signals'],
     stack: ['PyTorch', 'GNN', 'FastAPI', 'Vector search', 'Streamlit'],
   },
   {
     number: '04',
-    title: 'Autonomous FinTech Fraud Analytics',
+    title: 'FinTech Fraud Analysis',
     category: 'Analytics',
-    description: 'A transaction analytics platform that turns a high-volume synthetic dataset into fraud and loss intelligence.',
-    details: ['Generated and modeled 1M+ transactions in a PostgreSQL star schema', 'Isolation Forest and XGBoost with automated risk telemetry', 'Power BI executive reporting with sub-second SQL aggregations'],
+    description: 'An analysis of more than a million sample transactions to see where fraud and financial losses show up.',
+    details: ['Organized 1M+ transactions in a PostgreSQL star schema', 'Tested Isolation Forest and XGBoost for suspicious activity', 'Built Power BI reports backed by fast SQL aggregations'],
     stack: ['Python', 'PostgreSQL', 'XGBoost', 'Power BI', 'SQL'],
   },
   {
     number: '05',
-    title: 'SaaS Churn & Revenue Intelligence',
+    title: 'SaaS Churn Analysis',
     category: 'Analytics',
-    description: 'A B2B retention analytics suite that translates customer engagement signals into revenue-at-risk priorities.',
-    details: ['Churn scoring across 100,000 enterprise account profiles', 'PostgreSQL warehouse with a star-schema model', 'Power BI and DAX measures for MRR, churn, and revenue at risk'],
+    description: 'A look at which SaaS customers may leave and how much recurring revenue could be at risk.',
+    details: ['Scored churn risk across 100,000 customer profiles', 'Prepared the data in a PostgreSQL star-schema warehouse', 'Created Power BI and DAX views for MRR, churn, and revenue at risk'],
     stack: ['PostgreSQL', 'Power BI', 'DAX', 'Python', 'Analytics'],
   },
   {
     number: '06',
-    title: 'Enterprise Customer Analytics Pipeline',
+    title: 'Customer Data Pipeline',
     category: 'Analytics',
-    description: 'A repeatable ETL and BI workflow for turning large, raw customer datasets into useful segments and KPIs.',
-    details: ['Python ETL to clean and standardize 100,000+ records', 'Indexed PostgreSQL data for sub-second analytics queries', 'Streamlit dashboards with segment filters and CSV exports'],
+    description: 'A data-cleaning and reporting pipeline for exploring a large customer dataset.',
+    details: ['Cleaned and standardized 100,000+ records with Python', 'Indexed PostgreSQL tables for quick queries', 'Made Streamlit dashboards with segment filters and CSV export'],
     stack: ['Python', 'PostgreSQL', 'SQLAlchemy', 'ETL', 'Streamlit'],
   },
   {
     number: '07',
     title: 'inSupply',
     category: 'Full-stack',
-    description: 'A multi-tenant inventory and supply-chain platform built around reliable stock movement and operational reporting.',
-    details: ['Atomic MongoDB transactions, RBAC, and scheduled state transitions', 'CSV ingestion, low-stock alerts, and KPI reporting', 'On-demand PDF invoices, media uploads, and return audit previews'],
+    description: 'An inventory app for keeping track of stock, orders, and day-to-day supply activity.',
+    details: ['Handled stock changes with MongoDB transactions and role-based access', 'Added CSV imports, low-stock alerts, and reports', 'Generated PDF invoices and supported uploads and return reviews'],
     stack: ['MERN', 'MongoDB', 'RBAC', 'Cron', 'Cloudinary'],
     link: 'https://in-supply.vercel.app/',
     linkLabel: 'Live project',
@@ -92,8 +92,8 @@ const projects: Project[] = [
     number: '08',
     title: 'Restaurant Ordering & Delivery',
     category: 'Full-stack',
-    description: 'A three-role food ordering experience with secure checkout and live order status updates.',
-    details: ['Next.js and MERN user, admin, and delivery workflows', 'JWT access, Redux cart state, and payment integration', 'WebSocket order tracking with responsive Tailwind layouts'],
+    description: 'An online food-ordering app with separate views for customers, admins, and delivery staff.',
+    details: ['Built customer, admin, and delivery flows with Next.js and MERN', 'Added login, a Redux-powered cart, and payment handling', 'Used WebSockets to show order updates as they happen'],
     stack: ['Next.js', 'Node.js', 'MongoDB', 'WebSockets', 'Redux'],
     link: 'https://sanwariya-pizza.vercel.app/',
     linkLabel: 'Live project',
@@ -102,8 +102,8 @@ const projects: Project[] = [
     number: '09',
     title: 'Expense Tracker',
     category: 'Full-stack',
-    description: 'A secure personal finance app for recording transactions, reviewing ledgers, and understanding spending patterns.',
-    details: ['Protected REST APIs and MongoDB financial records', 'Bcrypt password hashing and JWT-protected endpoints', 'Redux-powered summaries, category filters, and transaction history'],
+    description: 'A personal finance app for logging expenses and keeping an eye on spending.',
+    details: ['Stored transactions in MongoDB and protected the REST API', 'Used bcrypt for password hashing and JWT for authenticated requests', 'Added category filters, transaction history, and Redux summaries'],
     stack: ['React', 'Node.js', 'MongoDB', 'JWT', 'Redux'],
     link: 'https://expense-tracker-frontend-nu-seven.vercel.app/',
     linkLabel: 'Live project',
@@ -112,8 +112,8 @@ const projects: Project[] = [
     number: '10',
     title: 'AP-Store',
     category: 'Full-stack',
-    description: 'An end-to-end shopping experience with product discovery, basket management, and order flows.',
-    details: ['Product catalog with filtering and search', 'Stateful cart and checkout experience', 'Authentication and order management workflows'],
+    description: 'An online store where customers can browse products, manage a cart, and place orders.',
+    details: ['Added product search and filters', 'Built the cart and checkout flow', 'Handled sign-in and order management'],
     stack: ['React', 'Node.js', 'Express', 'MongoDB', 'Redux'],
     link: 'https://github.com/Abpa007/AP-Store',
     linkLabel: 'Source code',
@@ -122,27 +122,27 @@ const projects: Project[] = [
     number: '11',
     title: 'RAG Teaching Assistant',
     category: 'AI & Data',
-    description: 'A video-aware learning assistant that grounds answers in transcribed course material and retrieved context.',
-    details: ['OpenAI Whisper transcription for long-form video', 'Hierarchical document chunking and semantic embeddings', 'Retrieval-augmented prompts designed to preserve context'],
+    description: 'A teaching assistant that searches course videos and uses their transcripts to answer questions.',
+    details: ['Transcribed long videos with Whisper', 'Split course material into sections and created semantic embeddings', 'Retrieved relevant passages to give answers with course context'],
     stack: ['Python', 'RAG', 'Whisper', 'NLP', 'Embeddings'],
   },
   {
     number: '12',
-    title: 'Real Estate Price Intelligence',
+    title: 'Property Price Prediction',
     category: 'AI & Data',
-    description: 'An end-to-end property price prediction workflow, from exploratory analysis through a lightweight API.',
-    details: ['Exploratory analysis and structured handling of missing data', 'Feature preparation and regression model evaluation', 'Flask API with RMSE and MAE model assessment'],
+    description: 'A project exploring which property details are most useful for estimating a home\'s price.',
+    details: ['Explored the dataset and handled missing values', 'Prepared features and compared regression models', 'Served predictions with Flask and measured errors with RMSE and MAE'],
     stack: ['Python', 'Scikit-learn', 'Pandas', 'Flask', 'EDA'],
   },
 ]
 
-const filters = ['All work', 'AI & Data', 'Full-stack', 'Analytics'] as const
+const filters = ['All projects', 'AI & Data', 'Full-stack', 'Analytics'] as const
 
 const skillGroups = [
   { title: 'Languages', items: ['Python', 'JavaScript', 'SQL', 'C', 'C++'] },
-  { title: 'Product engineering', items: ['React', 'Next.js', 'Node.js', 'Express', 'FastAPI', 'Django', 'Flask'] },
+  { title: 'Frameworks', items: ['React', 'Next.js', 'Node.js', 'Express', 'FastAPI', 'Django', 'Flask'] },
   { title: 'Data & AI', items: ['Pandas', 'NumPy', 'Scikit-learn', 'PyTorch', 'TensorFlow', 'XGBoost', 'RAG', 'NLP', 'GNN'] },
-  { title: 'Platforms & workflow', items: ['MongoDB', 'PostgreSQL', 'MySQL', 'Neo4j', 'Power BI', 'Streamlit', 'Docker', 'Git', 'Jira'] },
+  { title: 'Tools & platforms', items: ['MongoDB', 'PostgreSQL', 'MySQL', 'Neo4j', 'Power BI', 'Streamlit', 'Docker', 'Git', 'Jira'] },
 ]
 
 const experience = [
@@ -150,19 +150,19 @@ const experience = [
     role: 'MERN Stack Developer Intern',
     company: 'Cypher Analytica',
     period: 'May 2025 — Nov 2025',
-    points: ['Built 10+ Node.js and Express APIs, JWT authentication, and role-based access for three dashboard portals.', 'Integrated real-time WebSocket feeds; improved MongoDB schemas, indexes, and aggregation pipelines.', 'Used Python scripts for server-log analysis and documented API and data-flow specifications.'],
+    points: ['Built 10+ APIs with Node.js and Express, including login and role-based access for three dashboards.', 'Connected live WebSocket updates and improved MongoDB schemas, indexes, and queries.', 'Used Python to review server logs and wrote API and data-flow documentation.'],
   },
   {
     role: 'Frontend Intern · Part-time',
     company: 'Pantech Prolabs India Pvt. Ltd.',
     period: 'Jul 2025 — Oct 2025',
-    points: ['Built responsive React and Tailwind interfaces that consumed asynchronous REST and JSON data.', 'Created reusable UI modules and validation across application forms in a remote engineering team.'],
+    points: ['Built responsive React and Tailwind pages that used data from REST APIs.', 'Made reusable UI components and added validation to application forms with a remote team.'],
   },
   {
     role: 'Software Testing Intern',
     company: 'RAROME Smart School Software',
     period: 'Feb 2025 — Jun 2025',
-    points: ['Ran manual and regression testing across four application modules and multiple device viewports.', 'Logged UI, logic, and API defects in Jira and collaborated with developers through verification.'],
+    points: ['Manually and regression-tested four application modules on different devices.', 'Filed UI, logic, and API bugs in Jira, then checked fixes with developers.']
   },
 ]
 
@@ -190,10 +190,10 @@ function Hero() {
     <section id="top" className="hero-section">
       <div className="hero-grid-lines" aria-hidden="true" />
       <div className="hero-copy">
-        <p className="eyebrow"><span className="status-dot" /> AVAILABLE FOR THE NEXT CHAPTER <span className="eyebrow-location"><MapPin aria-hidden="true" /> INDORE, INDIA</span></p>
-        <h1>Ideas into<br /><span>impact.</span></h1>
+        <p className="eyebrow"><span className="status-dot" /> OPEN TO DEVELOPER ROLES <span className="eyebrow-location"><MapPin aria-hidden="true" /> INDORE, INDIA</span></p>
+        <h1>I build useful<br /><span>software.</span></h1>
         <div className="hero-bottom">
-          <p className="hero-intro">I&apos;m Abhay Panchal — a developer and data practitioner building thoughtful software, useful intelligence, and the systems in between.</p>
+          <p className="hero-intro">I&apos;m Abhay. I build web apps, work with data, and enjoy turning a messy problem into something people can actually use.</p>
           <a className="circle-link" href="#work" aria-label="Explore selected projects"><ArrowDown aria-hidden="true" /></a>
         </div>
       </div>
@@ -213,19 +213,19 @@ function Hero() {
         </div>
         <span className="hero-index">01 / 05</span>
       </div>
-      <div className="hero-marquee" aria-hidden="true"><span>BUILD WITH PURPOSE</span><span>·</span><span>MAKE DATA USEFUL</span><span>·</span><span>SHIP WITH CARE</span><span>·</span><span>BUILD WITH PURPOSE</span></div>
+      <div className="hero-marquee" aria-hidden="true"><span>WEB DEVELOPMENT</span><span>·</span><span>WORKING WITH DATA</span><span>·</span><span>ALWAYS LEARNING</span><span>·</span><span>WEB DEVELOPMENT</span></div>
     </section>
   )
 }
 
 function SelectedWork() {
-  const [filter, setFilter] = useState<(typeof filters)[number]>('All work')
-  const visibleProjects = useMemo(() => filter === 'All work' ? projects : projects.filter((project) => project.category === filter), [filter])
+  const [filter, setFilter] = useState<(typeof filters)[number]>('All projects')
+  const visibleProjects = useMemo(() => filter === 'All projects' ? projects : projects.filter((project) => project.category === filter), [filter])
   return (
     <section id="work" className="work-section section-wrap">
-      <SectionLabel number="01">SELECTED WORK <span className="label-count">({String(projects.length).padStart(2, '0')})</span></SectionLabel>
-      <div className="work-heading-row"><div><p className="eyebrow dark-eyebrow">A PROJECT FOR EVERY QUESTION</p><h2>Built to be <span>useful.</span></h2></div><p className="section-intro">From resilient commerce flows to graph-powered fraud intelligence — here&apos;s the work, one distinct idea at a time.</p></div>
-      <div className="project-toolbar"><div className="filter-list" role="group" aria-label="Filter projects">{filters.map((item) => <button key={item} type="button" className={`filter-button${filter === item ? ' active' : ''}`} aria-pressed={filter === item} onClick={() => setFilter(item)}>{item}<span>{item === 'All work' ? projects.length : projects.filter((project) => project.category === item).length}</span></button>)}</div><p className="project-showing">SHOWING {String(visibleProjects.length).padStart(2, '0')} PROJECTS</p></div>
+      <SectionLabel number="01">PROJECTS <span className="label-count">({String(projects.length).padStart(2, '0')})</span></SectionLabel>
+      <div className="work-heading-row"><div><p className="eyebrow dark-eyebrow">A FEW OF MY PROJECTS</p><h2>Things I&apos;ve <span>built.</span></h2></div><p className="section-intro">A mix of web development, analytics, and machine learning projects. Here are the ones I&apos;ve spent the most time on.</p></div>
+      <div className="project-toolbar"><div className="filter-list" role="group" aria-label="Filter projects">{filters.map((item) => <button key={item} type="button" className={`filter-button${filter === item ? ' active' : ''}`} aria-pressed={filter === item} onClick={() => setFilter(item)}>{item}<span>{item === 'All projects' ? projects.length : projects.filter((project) => project.category === item).length}</span></button>)}</div><p className="project-showing">{String(visibleProjects.length).padStart(2, '0')} PROJECTS</p></div>
       <div className="project-grid" aria-live="polite">{visibleProjects.map((project) => <article className="project-card" key={project.number}>
         <div className="project-topline"><span className="project-number">PROJECT / {project.number}</span><span className="project-category">{project.category}</span></div>
         <div className={`project-art art-${project.number}`} aria-hidden="true"><span className="art-grid"/><span className="art-orbit art-orbit-a"/><span className="art-orbit art-orbit-b"/><span className="art-symbol">{project.category === 'Analytics' ? <Radio /> : project.category === 'AI & Data' ? <Sparkles /> : <Code2 />}</span><span className="art-word">{project.number === '01' ? 'OMNI' : project.number === '04' ? 'SIGNAL' : project.number === '07' ? 'SUPPLY' : project.number === '11' ? 'RETRIEVE' : project.category.toUpperCase()}</span></div>
@@ -239,15 +239,15 @@ function SelectedWork() {
 }
 
 function ExperienceSection() {
-  return <section id="experience" className="experience-section"><div className="section-wrap"><SectionLabel number="02">EXPERIENCE</SectionLabel><div className="experience-heading"><h2>Learning by<br /><span>doing the work.</span></h2><p>Three internships. Three different lenses on building software that people can rely on.</p></div><div className="timeline">{experience.map((item, index) => <article className="timeline-item" key={item.company}><div className="timeline-index"><span>0{index + 1}</span><span className="timeline-dot" /></div><div className="timeline-main"><p className="timeline-company">{item.company}</p><h3>{item.role}</h3><ul>{item.points.map((point) => <li key={point}>{point}</li>)}</ul></div><p className="timeline-period">{item.period}</p></article>)}</div></div></section>
+  return <section id="experience" className="experience-section"><div className="section-wrap"><SectionLabel number="02">EXPERIENCE</SectionLabel><div className="experience-heading"><h2>Where I&apos;ve<br /><span>worked.</span></h2><p>Internships where I worked on APIs, interfaces, and testing alongside the teams building them.</p></div><div className="timeline">{experience.map((item, index) => <article className="timeline-item" key={item.company}><div className="timeline-index"><span>0{index + 1}</span><span className="timeline-dot" /></div><div className="timeline-main"><p className="timeline-company">{item.company}</p><h3>{item.role}</h3><ul>{item.points.map((point) => <li key={point}>{point}</li>)}</ul></div><p className="timeline-period">{item.period}</p></article>)}</div></div></section>
 }
 
 function AboutSection() {
-  return <section id="about" className="about-section section-wrap"><SectionLabel number="03">A LITTLE CONTEXT</SectionLabel><div className="about-layout"><div className="about-statement"><p className="eyebrow dark-eyebrow">DEVELOPER · DATA EXPLORER · LIFELONG LEARNER</p><h2>Curious by nature.<br />Grounded in <span>craft.</span></h2><p className="about-copy">I work across full-stack engineering, analytics, and applied AI. That mix helps me see a problem from the data layer to the interface — and build the pieces into one considered solution.</p><a className="inline-link" href="https://github.com/Abpa007" target="_blank" rel="noreferrer">More on GitHub <ArrowUpRight aria-hidden="true" /></a></div><div className="about-details"><div className="education-card"><div className="about-card-label"><BriefcaseBusiness aria-hidden="true" /> EDUCATION <span>2021 — 2026</span></div><h3>Integrated Master of Computer Applications</h3><p>IPS Academy, Indore</p><p className="education-score">CGPA <strong>7.74</strong></p></div><div className="skills-card"><div className="about-card-label"><Code2 aria-hidden="true" /> TOOLKIT <span>FOUR DISCIPLINES</span></div><div className="skill-groups">{skillGroups.map((group) => <div className="skill-group" key={group.title}><h3>{group.title}</h3><p>{group.items.join(' · ')}</p></div>)}</div></div><div className="certification-card"><div className="about-card-label"><Sparkles aria-hidden="true" /> CERTIFICATIONS</div><ul><li>Job Ready Data Science, ML & AI <span>CodeWithHarry</span></li><li>Full Stack MERN Development <span>Vivek IT Solution</span></li><li>C/C++ with Object-Oriented Programming <span>Universal Informatics</span></li></ul></div></div></div></section>
+  return <section id="about" className="about-section section-wrap"><SectionLabel number="03">ABOUT ME</SectionLabel><div className="about-layout"><div className="about-statement"><p className="eyebrow dark-eyebrow">DEVELOPER · DATA · INDORE</p><h2>I like figuring<br />things <span>out.</span></h2><p className="about-copy">I enjoy working across the backend, the interface, and the data behind a product. Lately, I&apos;ve been spending more time on analytics and applied AI.</p><a className="inline-link" href="https://github.com/Abpa007" target="_blank" rel="noreferrer">More on GitHub <ArrowUpRight aria-hidden="true" /></a></div><div className="about-details"><div className="education-card"><div className="about-card-label"><BriefcaseBusiness aria-hidden="true" /> EDUCATION <span>2021 — 2026</span></div><h3>Integrated Master of Computer Applications</h3><p>IPS Academy, Indore</p><p className="education-score">CGPA <strong>7.74</strong></p></div><div className="skills-card"><div className="about-card-label"><Code2 aria-hidden="true" /> TOOLKIT <span>FOUR DISCIPLINES</span></div><div className="skill-groups">{skillGroups.map((group) => <div className="skill-group" key={group.title}><h3>{group.title}</h3><p>{group.items.join(' · ')}</p></div>)}</div></div><div className="certification-card"><div className="about-card-label"><Sparkles aria-hidden="true" /> CERTIFICATIONS</div><ul><li>Job Ready Data Science, ML & AI <span>CodeWithHarry</span></li><li>Full Stack MERN Development <span>Vivek IT Solution</span></li><li>C/C++ with Object-Oriented Programming <span>Universal Informatics</span></li></ul></div></div></div></section>
 }
 
 function ContactSection() {
-  return <footer id="contact" className="contact-section"><div className="contact-inner"><SectionLabel number="04">MAKE SOMETHING MATTER</SectionLabel><div className="contact-heading"><p>Have a good problem?</p><h2>Let&apos;s make it<br /><span>better.</span></h2><a className="contact-round-link" href="mailto:abhaypanchal095@gmail.com" aria-label="Email Abhay Panchal"><ArrowUpRight aria-hidden="true" /></a></div><div className="contact-bottom"><div className="contact-email"><span>THE BEST WAY TO REACH ME</span><a href="mailto:abhaypanchal095@gmail.com">abhaypanchal095@gmail.com <ArrowUpRight aria-hidden="true" /></a><a href="tel:+919406969849">+91 94069 69849</a></div><div className="social-links"><a href="https://github.com/Abpa007" target="_blank" rel="noreferrer"><Code2 aria-hidden="true" /> GitHub <ArrowUpRight aria-hidden="true" /></a><a href="https://www.linkedin.com/in/abhay-panchal-3b853b376" target="_blank" rel="noreferrer"><Globe2 aria-hidden="true" /> LinkedIn <ArrowUpRight aria-hidden="true" /></a><a href="mailto:abhaypanchal095@gmail.com"><Mail aria-hidden="true" /> Email <ArrowUpRight aria-hidden="true" /></a></div></div><div className="footer-legal"><span>© {new Date().getFullYear()} Abhay Panchal</span><span>Designed with intent. Built with care.</span><a href="#top">BACK TO TOP <ArrowRight aria-hidden="true" /></a></div></div></footer>
+  return <footer id="contact" className="contact-section"><div className="contact-inner"><SectionLabel number="04">GET IN TOUCH</SectionLabel><div className="contact-heading"><p>Have a project in mind?</p><h2>Let&apos;s<br /><span>talk.</span></h2><a className="contact-round-link" href="mailto:abhaypanchal095@gmail.com" aria-label="Email Abhay Panchal"><ArrowUpRight aria-hidden="true" /></a></div><div className="contact-bottom"><div className="contact-email"><span>EMAIL ME</span><a href="mailto:abhaypanchal095@gmail.com">abhaypanchal095@gmail.com <ArrowUpRight aria-hidden="true" /></a><a href="tel:+919406969849">+91 94069 69849</a></div><div className="social-links"><a href="https://github.com/Abpa007" target="_blank" rel="noreferrer"><Code2 aria-hidden="true" /> GitHub <ArrowUpRight aria-hidden="true" /></a><a href="https://www.linkedin.com/in/abhay-panchal-3b853b376" target="_blank" rel="noreferrer"><Globe2 aria-hidden="true" /> LinkedIn <ArrowUpRight aria-hidden="true" /></a><a href="mailto:abhaypanchal095@gmail.com"><Mail aria-hidden="true" /> Email <ArrowUpRight aria-hidden="true" /></a></div></div><div className="footer-legal"><span>© {new Date().getFullYear()} Abhay Panchal</span><span>Made in Indore, India.</span><a href="#top">BACK TO TOP <ArrowRight aria-hidden="true" /></a></div></div></footer>
 }
 
 export default function Portfolio() {

@@ -4,16 +4,16 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Abhay Panchal — Developer & Data Practitioner',
-  description: 'The portfolio of Abhay Panchal: full-stack engineering, applied AI, and analytics. Explore 12 distinct projects, experience, and skills.',
+  description: 'I’m Abhay Panchal, a developer in Indore. Take a look at my projects in web development, analytics, and AI, and the experience behind them.',
   openGraph: {
     title: 'Abhay Panchal — Developer & Data Practitioner',
-    description: 'Thoughtful software, useful intelligence, and the systems in between.',
+    description: 'Projects in web development, analytics, and AI by Abhay Panchal.',
     type: 'website',
   },
   twitter: {
     card: 'summary',
     title: 'Abhay Panchal — Developer & Data Practitioner',
-    description: 'Thoughtful software, useful intelligence, and the systems in between.',
+    description: 'Projects in web development, analytics, and AI by Abhay Panchal.',
   },
   generator: 'v0.app',
   icons: {
