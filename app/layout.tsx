@@ -1,5 +1,5 @@
 import { Analytics } from '@vercel/analytics/next'
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -15,7 +15,6 @@ export const metadata: Metadata = {
     title: 'Abhay Panchal — Developer & Data Practitioner',
     description: 'Projects in web development, analytics, and AI by Abhay Panchal.',
   },
-  generator: 'v0.app',
   icons: {
     icon: [
       {
@@ -33,11 +32,13 @@ export const metadata: Metadata = {
     ],
     apple: '/apple-icon.png',
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-  },
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#17201b',
+  colorScheme: 'light',
 }
 
 export default function RootLayout({
