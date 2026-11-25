@@ -1,11 +1,20 @@
 import { Analytics } from '@vercel/analytics/next'
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Abhay Panchal - Full-Stack Developer Portfolio',
-  description: 'Full-Stack Developer specializing in MERN stack, React, Next.js, Node.js, and Express.js. Showcasing projects and expertise.',
-  generator: 'v0.app',
+  title: 'Abhay Panchal — Developer & Data Practitioner',
+  description: 'I’m Abhay Panchal, a developer in Indore. Take a look at my projects in web development, analytics, and AI, and the experience behind them.',
+  openGraph: {
+    title: 'Abhay Panchal — Developer & Data Practitioner',
+    description: 'Projects in web development, analytics, and AI by Abhay Panchal.',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Abhay Panchal — Developer & Data Practitioner',
+    description: 'Projects in web development, analytics, and AI by Abhay Panchal.',
+  },
   icons: {
     icon: [
       {
@@ -23,11 +32,13 @@ export const metadata: Metadata = {
     ],
     apple: '/apple-icon.png',
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-  },
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#17201b',
+  colorScheme: 'light',
 }
 
 export default function RootLayout({
