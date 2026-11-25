@@ -1,7 +1,8 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
 import {
   ArrowDown,
   ArrowDownRight,
@@ -136,6 +137,8 @@ const projects: Project[] = [
   },
 ]
 
+const DimensionalArt = dynamic(() => import('@/components/dimensional-art'), { ssr: false })
+
 const filters = ['All projects', 'AI & Data', 'Full-stack', 'Analytics'] as const
 
 const experience = [
@@ -159,8 +162,43 @@ const experience = [
   },
 ]
 
+function MotionObserver() {
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return
+
+    const reveal = (node: Element) => {
+      if (node.matches('[data-reveal]')) observer.observe(node)
+      node.querySelectorAll('[data-reveal]').forEach((child) => observer.observe(child))
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return
+        entry.target.classList.add('is-visible')
+        observer.unobserve(entry.target)
+      })
+    }, { threshold: 0.12, rootMargin: '0px 0px -5% 0px' })
+
+    document.documentElement.classList.add('motion-ready')
+    document.querySelectorAll('[data-reveal]').forEach((node) => observer.observe(node))
+    const mutations = new MutationObserver((records) => {
+      records.flatMap((record) => Array.from(record.addedNodes)).forEach((node) => {
+        if (node instanceof Element) reveal(node)
+      })
+    })
+    mutations.observe(document.body, { childList: true, subtree: true })
+
+    return () => {
+      observer.disconnect()
+      mutations.disconnect()
+      document.documentElement.classList.remove('motion-ready')
+    }
+  }, [])
+
+  return null
+}
+
 function SectionLabel({ children, number }: { children: React.ReactNode; number: string }) {
-  return <div className="section-label"><span>{number}</span><span>{children}</span></div>
+  return <div className="section-label" data-reveal><span>{number}</span><span>{children}</span></div>
 }
 
 function Navigation() {
@@ -184,14 +222,14 @@ function Hero() {
       <div className="hero-grid-lines" aria-hidden="true" />
       <div className="hero-copy">
         <p className="eyebrow"><span className="status-dot" /> OPEN TO DEVELOPER ROLES <span className="eyebrow-location"><MapPin aria-hidden="true" /> INDORE, INDIA</span></p>
-        <h1>I build useful<br /><span>software.</span></h1>
+        <h1 data-reveal>I build useful<br /><span>software.</span></h1>
         <div className="hero-bottom">
-          <p className="hero-intro">I&apos;m Abhay. I build web apps, work with data, and enjoy turning a messy problem into something people can actually use.</p>
+          <p className="hero-intro" data-reveal>I&apos;m Abhay. I build web apps, work with data, and enjoy turning a messy problem into something people can actually use.</p>
           <a className="circle-link" href="#work" aria-label="Explore selected projects"><ArrowDown aria-hidden="true" /></a>
         </div>
       </div>
       <div className="hero-side">
-        <div className="portrait-frame" style={{ position: 'absolute', inset: '5% 8%', overflow: 'hidden', padding: 8, border: '1px solid rgb(197 239 128 / 48%)', background: 'linear-gradient(145deg, rgb(197 239 128 / 13%), rgb(242 240 232 / 5%))', boxShadow: '0 24px 80px rgb(0 0 0 / 28%), 0 0 70px rgb(197 239 128 / 8%)' }}>
+        <div className="portrait-frame" style={{ position: 'absolute', inset: '5% 8%', overflow: 'hidden', padding: 8, border: '1px solid rgb(219 190 142 / 55%)', background: 'linear-gradient(145deg, rgb(219 190 142 / 19%), rgb(242 240 232 / 4%))', boxShadow: '0 24px 80px rgb(0 0 0 / 38%), 0 0 70px rgb(219 190 142 / 8%)' }}>
           <Image
             className="portrait-image"
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_z6ks28z6ks28z6ks-PIvAjCTUaSpYmVA0PRS98fhq5WH1fc.png"
@@ -217,9 +255,9 @@ function SelectedWork() {
   return (
     <section id="work" className="work-section section-wrap">
       <SectionLabel number="01">PROJECTS <span className="label-count">({String(projects.length).padStart(2, '0')})</span></SectionLabel>
-      <div className="work-heading-row"><div><p className="eyebrow dark-eyebrow">A FEW OF MY PROJECTS</p><h2>Things I&apos;ve <span>built.</span></h2></div><p className="section-intro">A mix of web development, analytics, and machine learning projects. Here are the ones I&apos;ve spent the most time on.</p></div>
+      <div className="work-heading-row" data-reveal><div><p className="eyebrow dark-eyebrow">A FEW OF MY PROJECTS</p><h2>Things I&apos;ve <span>built.</span></h2></div><p className="section-intro">A mix of web development, analytics, and machine learning projects. Here are the ones I&apos;ve spent the most time on.</p></div>
       <div className="project-toolbar"><div className="filter-list" role="group" aria-label="Filter projects">{filters.map((item) => <button key={item} type="button" className={`filter-button${filter === item ? ' active' : ''}`} aria-pressed={filter === item} onClick={() => setFilter(item)}>{item}<span>{item === 'All projects' ? projects.length : projects.filter((project) => project.category === item).length}</span></button>)}</div><p className="project-showing">{String(visibleProjects.length).padStart(2, '0')} PROJECTS</p></div>
-      <div className="project-grid" aria-live="polite">{visibleProjects.map((project) => <article className="project-card" key={project.number}>
+      <div className="project-grid" aria-live="polite">{visibleProjects.map((project) => <article className="project-card" data-reveal key={project.number}>
         <div className="project-topline"><span className="project-number">PROJECT / {project.number}</span><span className="project-category">{project.category}</span></div>
         <div className={`project-art art-${project.number}`} aria-hidden="true"><span className="art-grid"/><span className="art-orbit art-orbit-a"/><span className="art-orbit art-orbit-b"/><span className="art-symbol">{project.category === 'Analytics' ? <Radio /> : project.category === 'AI & Data' ? <Sparkles /> : <Code2 />}</span><span className="art-word">{project.number === '01' ? 'OMNI' : project.number === '04' ? 'SIGNAL' : project.number === '07' ? 'SUPPLY' : project.number === '11' ? 'RETRIEVE' : project.category.toUpperCase()}</span></div>
         <div className="project-content"><div className="project-title-row"><h3>{project.title}</h3>{project.link && <a className="project-link" href={project.link} target="_blank" rel="noreferrer" aria-label={`${project.linkLabel}: ${project.title}`}><ArrowUpRight aria-hidden="true" /></a>}</div><p className="project-description">{project.description}</p>
@@ -231,18 +269,37 @@ function SelectedWork() {
   )
 }
 
+function DimensionalFeature() {
+  return (
+    <section className="dimensional-feature" aria-labelledby="dimensional-title">
+      <div className="dimensional-feature-inner">
+        <div className="dimensional-art-panel" data-reveal>
+          <DimensionalArt />
+          <span className="art-panel-index">DIMENSION STUDY / 001</span>
+        </div>
+        <div className="dimensional-copy" data-reveal>
+          <p className="eyebrow dimensional-eyebrow"><span className="status-dot" /> REAL-TIME · INTERACTIVE · WEBGL</p>
+          <h2 id="dimensional-title">Beyond the<br /><span>flat screen.</span></h2>
+          <p>A four-dimensional tesseract rotates through time, projected into a living three-dimensional scene. It responds to your pointer and turns a portfolio page into a small piece of interactive art.</p>
+          <div className="dimension-tags" aria-label="3D technologies and concepts"><span>THREE.JS</span><span>REACT THREE FIBER</span><span>4D PROJECTION</span><span>LIVE MOTION</span></div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function ExperienceSection() {
-  return <section id="experience" className="experience-section"><div className="section-wrap"><SectionLabel number="02">EXPERIENCE</SectionLabel><div className="experience-heading"><h2>Where I&apos;ve<br /><span>worked.</span></h2><p>Internships where I worked on APIs, interfaces, and testing alongside the teams building them.</p></div><div className="timeline">{experience.map((item, index) => <article className="timeline-item" key={item.company}><div className="timeline-index"><span>0{index + 1}</span><span className="timeline-dot" /></div><div className="timeline-main"><p className="timeline-company">{item.company}</p><h3>{item.role}</h3><ul>{item.points.map((point) => <li key={point}>{point}</li>)}</ul></div><p className="timeline-period">{item.period}</p></article>)}</div></div></section>
+  return <section id="experience" className="experience-section"><div className="section-wrap"><SectionLabel number="02">EXPERIENCE</SectionLabel><div className="experience-heading" data-reveal><h2>Where I&apos;ve<br /><span>worked.</span></h2><p>Internships where I worked on APIs, interfaces, and testing alongside the teams building them.</p></div><div className="timeline">{experience.map((item, index) => <article className="timeline-item" data-reveal key={item.company}><div className="timeline-index"><span>0{index + 1}</span><span className="timeline-dot" /></div><div className="timeline-main"><p className="timeline-company">{item.company}</p><h3>{item.role}</h3><ul>{item.points.map((point) => <li key={point}>{point}</li>)}</ul></div><p className="timeline-period">{item.period}</p></article>)}</div></div></section>
 }
 
 function AboutSection() {
-  return <section id="about" className="about-section section-wrap"><SectionLabel number="03">ABOUT ME</SectionLabel><div className="about-layout"><div className="about-statement"><p className="eyebrow dark-eyebrow">DEVELOPER · DATA · INDORE</p><h2>I like figuring<br />things <span>out.</span></h2><p className="about-copy">I enjoy working across the backend, the interface, and the data behind a product. Lately, I&apos;ve been spending more time on analytics and applied AI.</p><a className="inline-link" href="https://github.com/Abpa007" target="_blank" rel="noreferrer">More on GitHub <ArrowUpRight aria-hidden="true" /></a></div><div className="about-details"><div className="education-card"><div className="about-card-label"><BriefcaseBusiness aria-hidden="true" /> EDUCATION <span>2021 — 2026</span></div><h3>Integrated Master of Computer Applications</h3><p>IPS Academy, Indore</p><p className="education-score">CGPA <strong>7.74</strong></p></div><div className="certification-card"><div className="about-card-label"><Sparkles aria-hidden="true" /> CERTIFICATIONS</div><ul><li>Job Ready Data Science, ML & AI <span>CodeWithHarry</span></li><li>Full Stack MERN Development <span>Vivek IT Solution</span></li><li>C/C++ with Object-Oriented Programming <span>Universal Informatics</span></li></ul></div></div></div></section>
+  return <section id="about" className="about-section section-wrap"><SectionLabel number="03">ABOUT ME</SectionLabel><div className="about-layout"><div className="about-statement" data-reveal><p className="eyebrow dark-eyebrow">DEVELOPER · DATA · INDORE</p><h2>I like figuring<br />things <span>out.</span></h2><p className="about-copy">I enjoy working across the backend, the interface, and the data behind a product. Lately, I&apos;ve been spending more time on analytics and applied AI.</p><a className="inline-link" href="https://github.com/Abpa007" target="_blank" rel="noreferrer">More on GitHub <ArrowUpRight aria-hidden="true" /></a></div><div className="about-details"><div className="education-card" data-reveal><div className="about-card-label"><BriefcaseBusiness aria-hidden="true" /> EDUCATION <span>2021 — 2026</span></div><h3>Integrated Master of Computer Applications</h3><p>IPS Academy, Indore</p><p className="education-score">CGPA <strong>7.74</strong></p></div><div className="certification-card" data-reveal><div className="about-card-label"><Sparkles aria-hidden="true" /> CERTIFICATIONS</div><ul><li>Job Ready Data Science, ML & AI <span>CodeWithHarry</span></li><li>Full Stack MERN Development <span>Vivek IT Solution</span></li><li>C/C++ with Object-Oriented Programming <span>Universal Informatics</span></li></ul></div></div></div></section>
 }
 
 function ContactSection() {
-  return <footer id="contact" className="contact-section"><div className="contact-inner"><SectionLabel number="04">GET IN TOUCH</SectionLabel><div className="contact-heading"><p>Have a project in mind?</p><h2>Let&apos;s<br /><span>talk.</span></h2><a className="contact-round-link" href="mailto:abhaypanchal095@gmail.com" aria-label="Email Abhay Panchal"><ArrowUpRight aria-hidden="true" /></a></div><div className="contact-bottom"><div className="contact-email"><span>EMAIL ME</span><a href="mailto:abhaypanchal095@gmail.com">abhaypanchal095@gmail.com <ArrowUpRight aria-hidden="true" /></a><a href="tel:+919406969849">+91 94069 69849</a></div><div className="social-links"><a href="https://github.com/Abpa007" target="_blank" rel="noreferrer"><Code2 aria-hidden="true" /> GitHub <ArrowUpRight aria-hidden="true" /></a><a href="https://www.linkedin.com/in/abhay-panchal-3b853b376" target="_blank" rel="noreferrer"><Globe2 aria-hidden="true" /> LinkedIn <ArrowUpRight aria-hidden="true" /></a><a href="mailto:abhaypanchal095@gmail.com"><Mail aria-hidden="true" /> Email <ArrowUpRight aria-hidden="true" /></a></div></div><div className="footer-legal"><span>© {new Date().getFullYear()} Abhay Panchal</span><span>Made in Indore, India.</span><a href="#top">BACK TO TOP <ArrowRight aria-hidden="true" /></a></div></div></footer>
+  return <footer id="contact" className="contact-section"><div className="contact-inner"><SectionLabel number="04">GET IN TOUCH</SectionLabel><div className="contact-heading" data-reveal><p>Have a project in mind?</p><h2>Let&apos;s<br /><span>talk.</span></h2><a className="contact-round-link" href="mailto:abhaypanchal095@gmail.com" aria-label="Email Abhay Panchal"><ArrowUpRight aria-hidden="true" /></a></div><div className="contact-bottom" data-reveal><div className="contact-email"><span>EMAIL ME</span><a href="mailto:abhaypanchal095@gmail.com">abhaypanchal095@gmail.com <ArrowUpRight aria-hidden="true" /></a><a href="tel:+919406969849">+91 94069 69849</a></div><div className="social-links"><a href="https://github.com/Abpa007" target="_blank" rel="noreferrer"><Code2 aria-hidden="true" /> GitHub <ArrowUpRight aria-hidden="true" /></a><a href="https://www.linkedin.com/in/abhay-panchal-3b853b376" target="_blank" rel="noreferrer"><Globe2 aria-hidden="true" /> LinkedIn <ArrowUpRight aria-hidden="true" /></a><a href="mailto:abhaypanchal095@gmail.com"><Mail aria-hidden="true" /> Email <ArrowUpRight aria-hidden="true" /></a></div></div><div className="footer-legal"><span>© {new Date().getFullYear()} Abhay Panchal</span><span>Made in Indore, India.</span><a href="#top">BACK TO TOP <ArrowRight aria-hidden="true" /></a></div></div></footer>
 }
 
 export default function Portfolio() {
-  return <><Navigation /><main><Hero /><SelectedWork /><ExperienceSection /><AboutSection /></main><ContactSection /></>
+  return <><MotionObserver /><Navigation /><main><Hero /><SelectedWork /><DimensionalFeature /><ExperienceSection /><AboutSection /></main><ContactSection /></>
 }
