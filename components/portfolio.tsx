@@ -1,6 +1,7 @@
 'use client'
 
 import { useMemo, useState } from 'react'
+import Image from 'next/image'
 import {
   ArrowDown,
   ArrowDownRight,
@@ -196,11 +197,20 @@ function Hero() {
           <a className="circle-link" href="#work" aria-label="Explore selected projects"><ArrowDown aria-hidden="true" /></a>
         </div>
       </div>
-      <div className="hero-side" aria-label="A connected systems illustration">
-        <div className="orbit orbit-one" /><div className="orbit orbit-two" /><div className="orbit orbit-three" />
-        <div className="orbit-core"><Code2 aria-hidden="true" /></div>
-        <span className="orbit-node node-one" /><span className="orbit-node node-two" /><span className="orbit-node node-three" />
-        <span className="orbit-caption caption-top">ENGINEERING</span><span className="orbit-caption caption-bottom">DATA × PRODUCT</span>
+      <div className="hero-side">
+        <div className="portrait-frame" style={{ position: 'absolute', inset: '5% 8%', overflow: 'hidden', padding: 8, border: '1px solid rgb(197 239 128 / 48%)', background: 'linear-gradient(145deg, rgb(197 239 128 / 13%), rgb(242 240 232 / 5%))', boxShadow: '0 24px 80px rgb(0 0 0 / 28%), 0 0 70px rgb(197 239 128 / 8%)' }}>
+          <Image
+            className="portrait-image"
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_z6ks28z6ks28z6ks-PIvAjCTUaSpYmVA0PRS98fhq5WH1fc.png"
+            alt="Illustrated portrait of Abhay Panchal in a navy suit and tie"
+            width={1024}
+            height={1024}
+            priority
+            unoptimized
+            style={{ display: 'block', width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'saturate(.82) contrast(.96)' }}
+          />
+          <div className="portrait-caption" style={{ position: 'absolute', right: 16, bottom: 16, left: 16, display: 'flex', justifyContent: 'space-between', gap: 8, padding: '10px 12px', border: '1px solid rgb(255 255 255 / 18%)', background: 'rgb(23 32 27 / 88%)', color: '#dce7cf', fontFamily: 'var(--font-mono)', fontSize: 8, letterSpacing: '.12em', backdropFilter: 'blur(8px)' }}><span>ABHAY PANCHAL</span><span style={{ color: '#b9e96e', whiteSpace: 'nowrap' }}>DEVELOPER · DATA</span></div>
+        </div>
         <span className="hero-index">01 / 05</span>
       </div>
       <div className="hero-marquee" aria-hidden="true"><span>BUILD WITH PURPOSE</span><span>·</span><span>MAKE DATA USEFUL</span><span>·</span><span>SHIP WITH CARE</span><span>·</span><span>BUILD WITH PURPOSE</span></div>
