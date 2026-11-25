@@ -3,8 +3,18 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Abhay Panchal - Full-Stack Developer Portfolio',
-  description: 'Full-Stack Developer specializing in MERN stack, React, Next.js, Node.js, and Express.js. Showcasing projects and expertise.',
+  title: 'Abhay Panchal — Developer & Data Practitioner',
+  description: 'The portfolio of Abhay Panchal: full-stack engineering, applied AI, and analytics. Explore 12 distinct projects, experience, and skills.',
+  openGraph: {
+    title: 'Abhay Panchal — Developer & Data Practitioner',
+    description: 'Thoughtful software, useful intelligence, and the systems in between.',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Abhay Panchal — Developer & Data Practitioner',
+    description: 'Thoughtful software, useful intelligence, and the systems in between.',
+  },
   generator: 'v0.app',
   icons: {
     icon: [
