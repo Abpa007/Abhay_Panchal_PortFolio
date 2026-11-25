@@ -190,10 +190,10 @@ function Hero() {
     <section id="top" className="hero-section">
       <div className="hero-grid-lines" aria-hidden="true" />
       <div className="hero-copy">
-        <p className="eyebrow"><span className="status-dot" /> OPEN TO DEVELOPER ROLES <span className="eyebrow-location"><MapPin aria-hidden="true" /> INDORE, INDIA</span></p>
+        <p className="eyebrow"><span className="status-dot" /> OPEN TO SOFTWARE &amp; DATA ROLES <span className="eyebrow-location"><MapPin aria-hidden="true" /> INDORE, INDIA</span></p>
         <h1>I build useful<br /><span>software.</span></h1>
         <div className="hero-bottom">
-          <p className="hero-intro">I&apos;m Abhay. I build web apps, work with data, and enjoy turning a messy problem into something people can actually use.</p>
+          <p className="hero-intro">I&apos;m Abhay, and I&apos;m open to frontend, backend, and MERN development roles, along with opportunities in data analytics, data science, and AI/ML. My toolkit includes React, Next.js, Node.js, Express, MongoDB, SQL, and Python, with a growing foundation in machine learning.</p>
           <a className="circle-link" href="#work" aria-label="Explore selected projects"><ArrowDown aria-hidden="true" /></a>
         </div>
       </div>
